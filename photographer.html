@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xml:lang="fr" lang="fr">
+
+<head>
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <meta charset="utf-8">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+  <title>Fisheye - photographe </title>
+</head>
+
+<body>
+  <header>
+    <a  href="index.html">
+    <img alt="Logo" src="assets/images/logo.png" class="logo"/>
+  </a>
+  </header>
+  <main id="main">
+    <div class="photograph-header">
+      <button aria-label="Contacter" class="contact_button" onclick="displayModal()">Contactez-moi</button>
+    </div>
+
+    <div class="mediaSection"></div>
+
+    <div class="triStyle">
+      <label id="labelTri"  for="Order_By"> Trier par     </label>
+      <select name="triSelect" id="Order_By" class="Order_By" onchange="sortMedia(value)">
+        <option class="Pop" value="popularite" >Popularité</option>
+        <option class="Date" value="date" >Date</option>
+        <option class="Titre" value="titre" >Titre</option>
+      </select>
+
+    </div>
+
+  </main>
+  <div id="contact_modal">
+    <div class="contact_modal">
+      <header>
+
+        <h2>Contactez-moi</h2>
+        <img alt="Fermer" src="assets/icons/close.svg" onclick="closeModal()" />
+        <h2 class="name_modal"></h2>
+      </header>
+      <form>
+        <div>
+          <label for="prenom">Prénom</label>
+          <input id="prenom" type="text" name="prenom"/>
+          <label for="nom">Nom</label>
+          <input id="nom" type="text" name="nom"/>
+          <label for="email">Email</label>
+          <input id="email" type="text" name="email"/>
+          <label for="votreMessage">Votre message</label>
+          <input id="votreMessage" type="text" name="votreMessage"/>
+          <!--<input /> -->
+        </div>
+        <button aria-label="Envoyer" class="send_button">Envoyer</button>
+      </form>
+    </div>
+  </div>
+
+
+
+  <div id="lightbox_modal">
+
+    
+      <img class="fermer" alt="Fermer" src="assets/icons/close.png" onclick="closeLightboxModal()" />
+      <img class="previous_image" alt="Previous image" src="assets/icons/leftarrow.png" role="button" onclick="switchSlide(-1)" />
+      <div class="lightboxcontent">
+        
+      </div>
+      <img class="next_image" alt="Next image" src="assets/icons/rightarrow.png" role="button"  onclick="switchSlide(+1)"/>
+    
+
+  </div>
+
+  <script src="/scripts/utils/contactForm.js"></script>
+  <script src="scripts/utils/lightbox.js"></script>
+  <script src="scripts/factories/media.js"></script>
+  <script src="scripts/factories/photographer.js"></script>
+  <script src="scripts/pages/photographer.js"></script>
+
+
+</body>
+
+</html>
