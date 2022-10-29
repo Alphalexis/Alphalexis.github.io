@@ -8,4 +8,18 @@ function closeModal() {
     modal.style.display = "none";
 }
 
+let surname;
+let named;
+let email;
+let message;
 
+document.querySelector(".send_button").onclick = function(){
+    surname = document.getElementById("prenom").value;
+    console.log(surname);
+    named = document.getElementById("nom").value;
+    console.log(named);
+    email = document.getElementById("email").value;
+    console.log(email);
+    message = document.getElementById("votreMessage").value;
+    console.log(message);
+}
